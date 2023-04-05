@@ -59,9 +59,10 @@
             // 
             // clearBut
             // 
+            this.clearBut.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clearBut.Location = new System.Drawing.Point(335, 290);
             this.clearBut.Name = "clearBut";
-            this.clearBut.Size = new System.Drawing.Size(96, 23);
+            this.clearBut.Size = new System.Drawing.Size(97, 38);
             this.clearBut.TabIndex = 3;
             this.clearBut.Text = "Clear";
             this.clearBut.UseVisualStyleBackColor = true;
@@ -69,9 +70,10 @@
             // 
             // exitBut
             // 
+            this.exitBut.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exitBut.Location = new System.Drawing.Point(505, 290);
             this.exitBut.Name = "exitBut";
-            this.exitBut.Size = new System.Drawing.Size(99, 23);
+            this.exitBut.Size = new System.Drawing.Size(110, 38);
             this.exitBut.TabIndex = 4;
             this.exitBut.Text = "Exit";
             this.exitBut.UseVisualStyleBackColor = true;

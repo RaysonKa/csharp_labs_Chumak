@@ -36,27 +36,39 @@ namespace lab006
 
         private void plusBut_Click(object sender, EventArgs e)
         {
-            int maxLen = 1 + Math.Max(firstNum.Text.Length, secNum.Text.Length);
+            int maxLen = 1 + Math.Max(firstNum.Text.Length, secNum.TextLength);
             int[] num1 = new int[maxLen];
+
             int[] num2 = new int[maxLen];
             int[] sum = new int[maxLen];
             int[] extra = new int[maxLen];
-            int numId, textId;
-            numId = maxLen - 1;
-            textId = firstNum.Text.Length - 1;
-            while (textId >= 1)
-            {
-                num1[numId] = (firstNum.Text[textId] - '0');
-                textId--;
-                numId--;
 
-            }
-            for (numId = maxLen - 1; numId > 0; numId--)
+            int numberIdx, textIdx;
+
+            numberIdx = maxLen - 1;
+            textIdx = firstNum.Text.Length - 1;
+
+            while (textIdx >= 0)
             {
-                sum[numId] = (num1[numId] + num2[numId] + extra[numId]) % 10;
-                extra[numId - 1] = (num1[numId] + num2[numId] + extra[numId]) % 10;
+                num1[numberIdx] = (firstNum.Text[textIdx] - '0');
+                textIdx--;
+                numberIdx--;
+            }
+            numberIdx = maxLen - 1;
+            textIdx = secNum.TextLength - 1;
+            while (textIdx >= 0)
+            {
+                num2[numberIdx] = (secNum.Text[textIdx] - '0');
+                textIdx--;
+                numberIdx--;
+            }
+            for (numberIdx = maxLen - 1; numberIdx > 0; numberIdx--)
+            {
+                sum[numberIdx] = (num1[numberIdx] + num2[numberIdx] + extra[numberIdx]) % 10;
+                extra[numberIdx - 1] = (num1[numberIdx] + num2[numberIdx] + extra[numberIdx]) / 10;
             }
             sum[0] = extra[0];
+
             bool isNumber = false;
             foreach (int digit in sum)
             {
@@ -64,7 +76,6 @@ namespace lab006
                 {
                     isNumber = true;
                     sumNum.Text += digit;
-
                 }
                 else
                 {
